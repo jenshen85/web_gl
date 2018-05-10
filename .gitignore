@@ -1,0 +1,7 @@
+node_modules
+psd
+.idea
+*.zip
+*.rar
+*.logdist
+dist
