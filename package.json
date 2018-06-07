@@ -2,19 +2,27 @@
   "name": "builder",
   "version": "1.0.0",
   "description": "builder",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "NODE_ENV=development gulp",
+    "dev": "npm run start",
     "build": "NODE_ENV=production gulp build"
   },
-  "keywords": [],
-  "author": "Eugene",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenshen85/template_for_front.git"
+  },
+  "author": "Eugene Shereverov",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenshen85/template_for_front/issues"
+  },
+  "homepage": "https://github.com/jenshen85/template_for_front#readme",
   "devDependencies": {
-    "autoprefixer": "^8.4.1",
+    "autoprefixer": "^8.6.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.4",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
@@ -26,14 +34,16 @@
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
+    "jquery": "^3.3.1",
     "postcss-csso": "^3.0.0",
-    "webpack": "^4.8.1",
+    "webpack": "^4.11.1",
     "webpack-stream": "^4.0.3"
   },
   "dependencies": {
+    "lodash": "^4.17.10",
     "node-normalize-scss": "^8.0.0",
     "svg4everybody": "^2.1.9"
   }

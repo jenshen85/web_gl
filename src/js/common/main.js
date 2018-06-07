@@ -1,7 +1,10 @@
 'use strict'
+import $ from "jquery";
 
-let c = (a, b)=>{
-  return a + b;
-}
-
-console.log(c(3, 4));
+$(".title").on('click', (e)=> {
+  if(e.target.style.color !== "red") {
+    e.target.style.color = "red";
+  } else {
+    e.target.style.color = "black";
+  }
+});
