@@ -1,5 +1,4 @@
 'use strict'
-import $ from "jquery";
 
 $(".title").on('click', (e)=> {
   if(e.target.style.color !== "red") {

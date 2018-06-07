@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 const dev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 
@@ -12,7 +13,13 @@ const basicConfig = {
     publicPath: "/dist/assets/",
     filename: "[name].bundle.js"
   },
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
+  ],
   module: {
     rules: [
       {
