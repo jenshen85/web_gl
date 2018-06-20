@@ -4,9 +4,9 @@
   "description": "builder",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "NODE_ENV=development gulp",
+    "start": "set NODE_ENV=development&& gulp",
     "dev": "npm run start",
-    "build": "NODE_ENV=production gulp build"
+    "build": "set NODE_ENV=production&& gulp build"
   },
   "repository": {
     "type": "git",
@@ -43,8 +43,11 @@
     "webpack-stream": "^4.0.3"
   },
   "dependencies": {
+    "gsap": "^2.0.1",
     "lodash": "^4.17.10",
     "node-normalize-scss": "^8.0.0",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "three": "^0.93.0",
+    "three-orbit-controls": "^82.1.0"
   }
 }

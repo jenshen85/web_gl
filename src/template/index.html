@@ -2,20 +2,45 @@
 
 {% set title = "Главная" %}
 
-{% block header %}
-  {% include 'common/_header.html' %}
-{% endblock %}
-
 {% block content %}
-  <main>
-    <div class="container">
-      <h1 class="title">MAIN</h1>
-      <div class="block-wrapp clearfix">
-      </div>
-    </div>
-  </main>
+<div class="container" id="container">
+  
+</div>
 {% endblock %}
 
-{% block footer %}
-  {% include 'common/_footer.html' %}  
+{% block script %}
+<script type="x-shader/x-vertex" id="particle-vs" >
+  precision highp float;
+
+  attribute vec3 position;
+  attribute vec2 source;
+  attribute vec2 target;
+
+  uniform mat4 modelViewMatrix;
+  uniform mat4 projectionMatrix;
+
+  uniform float size;
+  uniform float blend;
+  uniform sampler2D sourceTex;
+  uniform sampler2D targetTex;
+  uniform vec2 dimensions;
+
+  varying vec3 vColor;
+  void main() {
+
+    vColor = vec3(1.0,0.,0.);
+
+    vec4 mvPosition = modelViewMatrix * vec4( position, 1. );
+    gl_PointSize = size * ( 1. / - mvPosition.z );
+    gl_Position = projectionMatrix * mvPosition;
+  }
+</script>
+
+<script type="x-shader/x-fragment" id="particle-fs" >
+  precision highp float;
+  varying vec3 vColor;
+  void main() {
+    gl_FragColor = vec4(1.,1.,1., 1.);
+  }
+</script> 
 {% endblock %}

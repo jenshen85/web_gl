@@ -12,11 +12,22 @@
   <title>{{ title }}</title>
 </head>
 <body>
+  
+  <!-- BEGIN wrapp -->
   <div class="wrapper">
     {% block header %}{% endblock %}
     {% block content %}{% endblock %}
     {% block footer %}{% endblock %}
   </div>
+  <!-- END wrapp -->
+
+  <!-- BEGIN scripts -->
+  {% block script %}{% endblock %}
+  <!-- END scripts -->
+
+  <!-- BEGIN scripts -->
   <script defer src="./assets/js/index.bundle.js"></script>
+  <!-- END scripts -->
+
 </body>
 </html>

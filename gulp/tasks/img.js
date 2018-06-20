@@ -1,7 +1,7 @@
 module.exports = function() {
   $.gulp.task("img", function() {
     return $.gulp
-      .src([$.img + "**/*.{jpg,png,jpeg,svg,gif,ico}", '!src/img/srcSprite/**'])
+      .src([$.img + "**/*.{jpg,png,jpeg,svg,gif,ico,vtk}", '!src/img/srcSprite/**'])
       .pipe($.plumber({
         errorHandler: $.notify.onError(function(error) {
           return {
