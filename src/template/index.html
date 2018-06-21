@@ -1,46 +1,41 @@
 {% extends './layout/_layout.html' %}
 
+{% block style %}
+<style>
+  .app-list {
+    padding: 30px;
+  }
+  .app-item {
+    margin-bottom: 20px;
+  }
+  .app-link {
+    color: black;
+    border-bottom: 2px solid #000;
+    margin-bottom: 20px;
+    transition: color 0.4s, border-bottom 0.4s;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .app-link:hover {
+    color: hsl(0, 93%, 47%);
+    border-bottom: 2px solid hsl(0, 93%, 47%);
+  }
+</style>
+{% endblock %}
+
 {% set title = "Главная" %}
 
 {% block content %}
-<div class="container" id="container">
+<div class="app" id="app">
+
+  <ul class="app-list">
+    <li class="app-item"><a href="page1.html" class="app-link">PAGE__1</a></li>
+  </ul>
   
 </div>
 {% endblock %}
 
 {% block script %}
-<script type="x-shader/x-vertex" id="particle-vs" >
-  precision highp float;
-
-  attribute vec3 position;
-  attribute vec2 source;
-  attribute vec2 target;
-
-  uniform mat4 modelViewMatrix;
-  uniform mat4 projectionMatrix;
-
-  uniform float size;
-  uniform float blend;
-  uniform sampler2D sourceTex;
-  uniform sampler2D targetTex;
-  uniform vec2 dimensions;
-
-  varying vec3 vColor;
-  void main() {
-
-    vColor = vec3(1.0,0.,0.);
-
-    vec4 mvPosition = modelViewMatrix * vec4( position, 1. );
-    gl_PointSize = size * ( 1. / - mvPosition.z );
-    gl_Position = projectionMatrix * mvPosition;
-  }
-</script>
-
-<script type="x-shader/x-fragment" id="particle-fs" >
-  precision highp float;
-  varying vec3 vColor;
-  void main() {
-    gl_FragColor = vec4(1.,1.,1., 1.);
-  }
-</script> 
+<script defer src="./assets/js/index.bundle.js"></script>
 {% endblock %}
+

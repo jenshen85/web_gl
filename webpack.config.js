@@ -6,7 +6,8 @@ const dev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 const basicConfig = {
   entry: {
     vendor:'./src/js/vendor.js',
-    index: "./src/js/index.js"
+    index: "./src/js/index.js",
+    page1: "./src/js/page1.js"
   },
   output: {
     path: path.resolve(__dirname, "./dist/assets/js/"),

@@ -8,7 +8,8 @@
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/main{{ css_name }}.css">
-  <script defer src="./assets/js/vendor.bundle.js"></script>  
+  <script defer src="./assets/js/vendor.bundle.js"></script>
+  {% block style %}{% endblock %}
   <title>{{ title }}</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
   <!-- END scripts -->
 
   <!-- BEGIN scripts -->
-  <script defer src="./assets/js/index.bundle.js"></script>
+  <!-- <script defer src="./assets/js/index.bundle.js"></script> -->
   <!-- END scripts -->
 
 </body>

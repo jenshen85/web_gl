@@ -1,0 +1,52 @@
+{% extends './layout/_layout.html' %}
+
+{% set title = "Главная" %}
+
+{% block content %}
+<div class="container" id="container">
+  
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="x-shader/x-vertex" id="particle-vs" >
+  precision highp float;
+
+  attribute vec3 position;  
+  attribute vec3 word0;  
+  attribute vec3 word1;
+  attribute vec3 word2;
+  attribute vec3 source;
+  attribute vec3 target;
+
+  uniform mat4 modelViewMatrix;
+  uniform mat4 projectionMatrix;
+
+  uniform float size;
+  uniform float blend;
+  uniform sampler2D sourceTex;
+  uniform sampler2D targetTex;
+  uniform vec2 dimensions;
+
+  varying vec3 vColor;
+  void main() {
+
+    vColor = vec3(1.0,0.,0.);
+
+    vec3 result = word0*blend + (1. - blend)*word1;
+
+    vec4 mvPosition = modelViewMatrix * vec4( result, 1. );
+    gl_PointSize = size * ( 1. / - mvPosition.z );
+    gl_Position = projectionMatrix * mvPosition;
+  }
+</script>
+
+<script type="x-shader/x-fragment" id="particle-fs" >
+  precision highp float;
+  varying vec3 vColor;
+  void main() {
+    gl_FragColor = vec4(1.,1.,1., 1.);
+  }
+</script>
+<script defer src="./assets/js/page1.bundle.js"></script>
+{% endblock %}
